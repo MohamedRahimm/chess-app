@@ -1,0 +1,25 @@
+#board {
+    background-image: url("src/assets/blueBoard.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 64vmin;
+    height: 64vmin;
+    aspect-ratio: 1/1;
+    margin: 5vh auto;
+    display: grid;
+    place-items: center;
+    grid-template-areas: "inner-div";
+}
+
+#tiles {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 2fr);
+    gap: 2px;
+}
+
+.tile {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 95%;
+}
