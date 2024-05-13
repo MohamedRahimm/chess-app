@@ -1,5 +1,8 @@
 import { RefObject, useMemo, useRef, useSyncExternalStore } from "react";
 import "./board.css"
+import boardURL from "../assets/blueBoard.svg"
+
+
 function subscribe(callback: (e: Event) => void) {
   window.addEventListener("resize", callback);
   return () => {
@@ -28,16 +31,19 @@ interface TilesProps {
   height: string;
   boardState: pieces[][]; 
 }
+
+
 function Tiles(props: TilesProps) {
     const tiles:React.ReactElement[] = [];
     for (let i = 0; i < 8; i++) {
         for(let j = 0;j<8;j++){
-        tiles.push(<div key= {`${i}${j}`}
-                        className="tile"
-                        style={{
-                        backgroundImage: `url("src/assets/${props.boardState[i][j]}.png")`,
-                    }}>
-                    </div>);
+          const url = new URL(`../assets/${props.boardState[i][j]}.png`, import.meta.url).href
+          tiles.push(<div key= {`${i}${j}`}
+                          className="tile"
+                          style={{
+                          backgroundImage: `url("${url}")`,
+                      }}>
+                      </div>);
         }
     }
     return (
@@ -63,7 +69,7 @@ export default function Board() {
 
   return (
     <div>
-      <div id="board" ref={ref}>
+      <div id="board" ref={ref} style={{backgroundImage: `url("${boardURL}")`}}>
 
       <Tiles width={width} height={height} boardState={boardState} />
       </div>
