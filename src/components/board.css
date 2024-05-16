@@ -1,5 +1,4 @@
 #board {
-    /* background-image: url("src/assets/blueBoard.svg"); */
     background-repeat: no-repeat;
     background-size: contain;
     width: 64vmin;
@@ -18,7 +17,8 @@
     gap: 2px;
 }
 
-.tile {
+.tile,
+#moving {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 95%;
