@@ -135,7 +135,7 @@ export default function App() {
   return (
     <Routes>
       <Route
-        path="/chess-app/game"
+        path="/game"
         element={
           <div
             className="App"
@@ -152,7 +152,7 @@ export default function App() {
         }
       >
       </Route>
-      <Route path="/chess-app" element={<Home></Home>}></Route>
+      <Route path="/" element={<Home></Home>}></Route>
     </Routes>
   );
 }
