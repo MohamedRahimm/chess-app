@@ -1,6 +1,7 @@
-import Board, { piece } from "./board";
+import Board, { piece } from "./Board/Board";
 import { MouseEvent, TouchEvent, useState } from "react";
-
+import { Route, Routes } from "react-router-dom";
+import Home from "./Home/Home";
 export default function App() {
   const initialBoardState: piece[][] = [
     ["bR", "bN", "bB", "bQ", "bK", "bB", "bN", "bR"],
@@ -21,7 +22,6 @@ export default function App() {
       setActivePiece(element);
     }
   }
-
   function movePiece(e: MouseEvent) {
     if (activePiece != undefined) {
       const clone = document.querySelector("#moving") as HTMLElement;
@@ -39,7 +39,6 @@ export default function App() {
       clone.style.backgroundImage = activePiece.style.backgroundImage;
     }
   }
-
   function releasePiece(e: MouseEvent) {
     if (activePiece != undefined) {
       const clone = document.querySelector("#moving") as HTMLElement;
@@ -79,7 +78,6 @@ export default function App() {
       setActivePiece(targetElem);
     }
   }
-
   function touchMove(e: TouchEvent) {
     if (activePiece != undefined) {
       const clone = document.querySelector("#moving") as HTMLElement;
@@ -100,7 +98,6 @@ export default function App() {
       clone.style.backgroundImage = activePiece.style.backgroundImage;
     }
   }
-
   function touchEnd(e: TouchEvent) {
     if (activePiece != undefined) {
       const app = document.querySelector(".App") as HTMLElement;
@@ -136,17 +133,26 @@ export default function App() {
     }
   }
   return (
-    <div
-      className="App"
-      onMouseUp={releasePiece}
-      onMouseDown={grabPiece}
-      onMouseMove={movePiece}
-      onTouchStart={touchStart}
-      onTouchMove={touchMove}
-      onTouchEnd={touchEnd}
-    >
-      <Board boardState={boardState}>
-      </Board>
-    </div>
+    <Routes>
+      <Route
+        path="/chess-app/game"
+        element={
+          <div
+            className="App"
+            onMouseUp={releasePiece}
+            onMouseDown={grabPiece}
+            onMouseMove={movePiece}
+            onTouchStart={touchStart}
+            onTouchMove={touchMove}
+            onTouchEnd={touchEnd}
+          >
+            <Board boardState={boardState}>
+            </Board>
+          </div>
+        }
+      >
+      </Route>
+      <Route path="/chess-app" element={<Home></Home>}></Route>
+    </Routes>
   );
 }

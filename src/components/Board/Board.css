@@ -2,7 +2,9 @@
     background-repeat: no-repeat;
     background-size: contain;
     width: 64vmin;
+    min-width: 500px;
     height: 64vmin;
+    min-height: 500px;
     aspect-ratio: 1/1;
     margin: 5vh auto;
     display: grid;

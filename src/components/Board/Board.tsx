@@ -1,5 +1,5 @@
 import { RefObject, useMemo, useRef, useSyncExternalStore } from "react";
-import "./board.css";
+import "./Board.css";
 import React from "react";
 
 function subscribe(callback: (e: Event) => void) {
@@ -58,7 +58,7 @@ function Tiles(props: TilesProps) {
   for (let i = 0; i < 8; i++) {
     for (let j = 0; j < 8; j++) {
       const url =
-        new URL(`../assets/${props.boardState[i][j]}.png`, import.meta.url)
+        new URL(`../../assets/${props.boardState[i][j]}.png`, import.meta.url)
           .href;
       tiles.push(
         <div
@@ -85,9 +85,9 @@ function Tiles(props: TilesProps) {
 export default function Board(boardProps: boardProps) {
   const boardRef = useRef<HTMLDivElement>(null);
   const { width, height } = useDimensions(boardRef);
-  const boardURL = new URL(`../assets/blueBoard.svg`, import.meta.url).href;
+  const boardURL = new URL(`../../assets/blueBoard.svg`, import.meta.url).href;
   return (
-    <div>
+    <>
       <div
         id="board"
         ref={boardRef}
@@ -106,6 +106,6 @@ export default function Board(boardProps: boardProps) {
           boardState={boardProps.boardState}
         />
       </div>
-    </div>
+    </>
   );
 }
