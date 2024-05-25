@@ -138,7 +138,6 @@ export default function App() {
         path="/game"
         element={
           <div
-            className="App"
             onMouseUp={releasePiece}
             onMouseDown={grabPiece}
             onMouseMove={movePiece}
@@ -152,7 +151,25 @@ export default function App() {
         }
       >
       </Route>
-      <Route path="/" element={<Home></Home>}></Route>
+      <Route
+        path="/"
+        element={
+          <div
+            onMouseUp={releasePiece}
+            onMouseDown={grabPiece}
+            onMouseMove={movePiece}
+            onTouchStart={touchStart}
+            onTouchMove={touchMove}
+            onTouchEnd={touchEnd}
+          >
+            <Home>
+            </Home>
+            <Board boardState={boardState}>
+            </Board>
+          </div>
+        }
+      >
+      </Route>
     </Routes>
   );
 }
