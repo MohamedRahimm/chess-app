@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://mohamedrahimm.github.io/chess-app",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

@@ -1,7 +1,6 @@
 import { RefObject, useMemo, useRef, useSyncExternalStore } from "react";
 import "./Board.css";
 import React from "react";
-
 function subscribe(callback: (e: Event) => void) {
   window.addEventListener("resize", callback);
   return () => {
@@ -81,7 +80,6 @@ function Tiles(props: TilesProps) {
     </div>
   );
 }
-
 export default function Board(boardProps: boardProps) {
   const boardRef = useRef<HTMLDivElement>(null);
   const { width, height } = useDimensions(boardRef);
