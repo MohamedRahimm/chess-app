@@ -1,67 +1,54 @@
-ul {
+.test {
     display: grid;
-    grid-template-columns: repeat(3, auto) 1fr repeat(3, auto);
-    list-style: none;
-    padding: 0;
-    justify-content: left;
+    grid-auto-flow: column;
+    justify-content: center;
 }
 
-li {
-    padding: 5px;
-}
-
-ul li:nth-child(4) {
-    grid-column: 5/6;
-}
-
-ul li:nth-child(5) {
-    grid-column: 6/6;
-}
-
-
-
-
-.button {
-    align-items: center;
-    background-color: #FCFCFD;
-    border-radius: 4px;
-    border-width: 0;
-    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-    box-sizing: border-box;
-    color: #36395A;
-    cursor: pointer;
-    display: inline-flex;
-    font-family: "JetBrains Mono", monospace;
-    height: 48px;
-    line-height: 1;
-    padding-left: 1vw;
-    padding-right: 1vw;
-    text-decoration: none;
-    transition: box-shadow .15s, transform .15s;
-    will-change: box-shadow, transform;
-    font-size: 18px;
+.index-intro {
+    display: grid;
+    padding-left: 10px;
     width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.index-intro a {
+    text-decoration: none;
 }
 
 
 
-.button:hover {
-    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-    transform: translateY(-2px);
+#comp-button {
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #3E6C88;
+    position: relative;
+    padding: 20px 40px;
+    text-shadow: 0px 1px 0px #000;
+    filter: dropshadow(color=#000, offx=0px, offy=1px);
+    box-shadow: inset 0 1px 0 #86A3B7, 0 10px 0 #0F3F53;
+    border-radius: 5px;
 }
 
-.button:active {
-    box-shadow: #D6D6E7 0 3px 7px inset;
-    transform: translateY(2px);
+#comp-button:active {
+    top: 10px;
+    background-color: #26556E;
+    box-shadow: inset 0 1px 0 #86A3B7, inset 0 -3px 0 #0F3F53;
 }
 
-@media (max-width: 500px) {
-    ul {
-        display: flex;
-        flex-grow: initial;
-    }
-
-    ul li {
-        flex-grow: 1;
-    }
+#comp-button:after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    padding: 4px;
+    position: absolute;
+    bottom: -15px;
+    left: -4px;
+    z-index: -1;
+    background-color: #0F3F53;
+    border-radius: 5px;
 }
