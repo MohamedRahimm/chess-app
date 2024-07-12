@@ -30,6 +30,7 @@ export default function App() {
           setBoardState,
           setActivePiece,
         )}
+      // Add touch movements
     >
       <Routes>
         <Route

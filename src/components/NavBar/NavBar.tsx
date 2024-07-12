@@ -8,7 +8,7 @@ export default function NavBar() {
           <li>
             <Link
               to="/"
-              className="button"
+              className="nav-button"
             >
               Home
             </Link>
@@ -16,21 +16,21 @@ export default function NavBar() {
           <li>
             <Link
               to="/game"
-              className="button"
+              className="nav-button"
             >
               Play
             </Link>
           </li>
           <li>
-            <Link to="" className="button">Login</Link>
+            <Link to="" className="nav-button">Login</Link>
           </li>
           <li>
-            <Link to="/" className="button">Setting</Link>
+            <Link to="/" className="nav-button">Settings</Link>
           </li>
           <li>
             <Link
               to="https://github.com/MohamedRahimm"
-              className="button"
+              className="nav-button"
             >
               GitHub
             </Link>
